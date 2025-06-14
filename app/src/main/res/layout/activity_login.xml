@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Activities.LoginActivity">
 
     <TextView
         android:id="@+id/txtTítulo"
@@ -73,27 +73,43 @@
         android:layout_width="206dp"
         android:layout_height="41dp"
         android:layout_marginBottom="12dp"
-        app:backgroundTint="@color/botoes"
         android:text="@string/botao_entrar"
-        app:layout_constraintBottom_toTopOf="@+id/btnEsqueciSenha"
+        app:backgroundTint="@color/botoes"
+        app:layout_constraintBottom_toTopOf="@+id/btnCriarCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCriarCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/transparent"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="0dp"
+        android:text="@string/criar_cadastro"
+        android:textColor="@color/blue_link"
+        app:layout_constraintBottom_toTopOf="@+id/btnEsqueciSenha"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnEsqueciSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
         android:background="@android:color/transparent"
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:padding="0dp"
         android:text="@string/botao_esqueci_senha"
         android:textColor="@color/blue_link"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="450dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

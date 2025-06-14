@@ -7,6 +7,11 @@
     <string name="label_senha">Senha</string>
     <string name="dica_senha">Digite sua senha</string>
     <string name="botao_entrar">Entrar</string>
+    <string name="criar_cadastro">Criar Cadatro</string>
     <string name="botao_esqueci_senha">Esqueci minha senha</string>
+    <string name="bem_vindo">Seja Bem Vindo.</string>
+    <string name="selecione_evento">Eventos disponíveis:</string>
+    <string name="comprar_ingresso">Comprar Ingressos</string>
+
 
 </resources>

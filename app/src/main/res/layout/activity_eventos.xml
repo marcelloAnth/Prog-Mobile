@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Activities.EventosActivity"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/txtBemVindo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bem_vindo"
+        android:textSize="25dp"
+        android:paddingBottom="15dp"
+        android:gravity="center"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tstSelecioneEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/selecione_evento"
+        android:textSize="18dp"
+        >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/lnlEventosDisponiveis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnComprarIngresso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/comprar_ingresso"
+        ></Button>
+
+
+</LinearLayout>
