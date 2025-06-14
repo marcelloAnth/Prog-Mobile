@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_login_to_eventos_disponiveis"
             app:destination="@id/eventosActivity"/>
+        <action
+            android:id="@+id/action_lgin_to_cadastro_usuario"
+            app:destination="@id/cadastroUsuarioActivity"
+            />
     </activity>
 
     <activity
@@ -21,4 +25,12 @@
         android:label="activity_eventos"
         tools:layout="@layout/activity_eventos">
     </activity>
+
+    <activity
+        android:id="@+id/cadastroUsuarioActivity"
+        android:name="com.example.atividade3.Activities.CadastroUsuarioActivity"
+        android:label="CadastroUsuarioActivity"
+        tools:layout="@layout/activity_cadastro_usuario"/>
+
+
 </navigation>

@@ -24,6 +24,9 @@
         <activity android:name=".Activities.EventosActivity">
 
         </activity>
+        <activity android:name=".Activities.CadastroUsuarioActivity">
+
+        </activity>
     </application>
 
 </manifest>

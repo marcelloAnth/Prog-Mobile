@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_link">#0000FF</color>
     <color name="botoes">#3498DB</color>
+    <color name="botao_confirmar">#2ECC71</color>
+    <color name="botao_cancelar">#E74C3C</color>
+    <color name="botao_inativo">#E0E0E0</color>
+
 </resources>
