@@ -27,6 +27,9 @@
         <activity android:name=".Activities.CadastroUsuarioActivity">
 
         </activity>
+        <activity android:name=".Activities.TrocaSenhaActivity">
+
+        </activity>
     </application>
 
 </manifest>

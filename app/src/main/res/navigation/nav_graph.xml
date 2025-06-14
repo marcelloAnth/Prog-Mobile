@@ -14,9 +14,12 @@
             android:id="@+id/action_login_to_eventos_disponiveis"
             app:destination="@id/eventosActivity"/>
         <action
-            android:id="@+id/action_lgin_to_cadastro_usuario"
+            android:id="@+id/action_login_to_cadastro_usuario"
             app:destination="@id/cadastroUsuarioActivity"
             />
+        <action
+            android:id="+@id/action_login_to_troca_senha"
+            app:destination="@id/trocaSenhaActivity"/>
     </activity>
 
     <activity
@@ -31,6 +34,12 @@
         android:name="com.example.atividade3.Activities.CadastroUsuarioActivity"
         android:label="CadastroUsuarioActivity"
         tools:layout="@layout/activity_cadastro_usuario"/>
+
+    <activity
+        android:id="@+id/trocaSenhaActivity"
+        android:name="com.example.atividade3.Activities.TrocaSenhaActivity"
+        android:label="activity_troca_senha"
+        tools:layout="@layout/activity_troca_senha" />
 
 
 </navigation>
