@@ -61,9 +61,12 @@
         android:id="@+id/telaCompraActivity"
         android:name="com.example.atividade3.Activities.TelaCompraActivity"
         android:label="TelaCompraActivity"
-        tools:layout="@layout/activity_tela_compra"
-
+        tools:layout="@layout/activity_tela_compra">
+    <action
+        android:id="+@id/tela_compra_to_eventos_disponiveis"
+        app:destination="@id/eventosActivity"/>
         />
+    </activity>
 
 
 </navigation>
