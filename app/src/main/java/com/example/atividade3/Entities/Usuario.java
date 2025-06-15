@@ -1,4 +1,4 @@
-package com.example.atividade3.DAO;
+package com.example.atividade3.Entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
