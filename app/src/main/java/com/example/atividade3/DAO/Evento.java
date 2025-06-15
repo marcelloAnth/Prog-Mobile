@@ -8,12 +8,13 @@ import java.util.Date;
 @Entity()
 public class Evento {
     @PrimaryKey(autoGenerate = true)
-    int idEvento;
-    String nome;
-    String local;
-    Date data;
-    String descricao;
-    int numIngressos;
+    private int idEvento;
+    private String nome;
+    private String local;
+    private Date data;
+    private String descricao;
+    private int numIngressos;
+    private byte[] foto;
 
     public Evento(int idEvento, String nome, String local, Date data, String descricao, int numIngressos) {
         this.idEvento = idEvento;
@@ -22,15 +23,10 @@ public class Evento {
         this.data = data;
         this.descricao = descricao;
         this.numIngressos = numIngressos;
+        this.foto = foto;
     }
 
-    public int getIdEvento() {
-        return idEvento;
-    }
 
-    public void setIdEvento(int idEvento) {
-        this.idEvento = idEvento;
-    }
 
     @Override
     public String toString() {
