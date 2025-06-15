@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 import java.util.Arrays;
 
-@Entity()
+@Entity(tableName = "usuarios")
 public class Usuario {
     @PrimaryKey(autoGenerate = true)
     private int idUsuario;
