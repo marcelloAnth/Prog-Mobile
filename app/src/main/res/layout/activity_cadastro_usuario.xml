@@ -98,7 +98,7 @@
         android:ems="10"
         android:hint="@string/dica_senha"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/lnlBotoes"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent" />
@@ -107,12 +107,12 @@
         android:id="@+id/lnlBotoes"
         android:layout_width="375dp"
         android:layout_height="95dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -144,6 +144,16 @@
             app:layout_constraintWidth_percent="0.45" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="84dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/lnlBotoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@tools:sample/avatars" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
