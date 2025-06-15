@@ -26,8 +26,6 @@ public class Evento {
         this.foto = foto;
     }
 
-
-
     @Override
     public String toString() {
         return "Evento{" +
