@@ -6,6 +6,8 @@ import androidx.room.Query;
 
 import com.example.atividade3.Entities.Evento;
 
+import java.util.List;
+
 @Dao
 public interface EventoDAO {
     @Insert
@@ -13,5 +15,10 @@ public interface EventoDAO {
 
     @Query("SELECT * FROM eventos WHERE idEvento = :id")
     Evento buscarEvento(int id);
+
+
+    @Query("SELECT idEvento, nome, local, data, descricao, numIngressos FROM eventos")
+    List<Evento> buscarEventosSemFoto();
+
 
 }

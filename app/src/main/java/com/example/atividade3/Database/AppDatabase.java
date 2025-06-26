@@ -13,6 +13,7 @@ import com.example.atividade3.DAO.UsuarioDAO;
 import com.example.atividade3.DAO.EventoDAO;
 import com.example.atividade3.Entities.Usuario;
 import com.example.atividade3.Entities.Evento;
+import com.example.atividade3.R;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -33,6 +34,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             super.onCreate(dbSqlite);
                             new Thread(() -> {
                                 UsuarioDAO usuarioDAO = getDatabase(context).usuarioDAO();
+                                EventoDAO eventoDAO = getDatabase(context).eventoDAO();
 
                                 String hashedAdminPassword = BCrypt.hashpw("admin123", BCrypt.gensalt());
                                 Usuario admin = new Usuario(0, "admin", hashedAdminPassword, null);
@@ -41,6 +43,13 @@ public abstract class AppDatabase extends RoomDatabase {
                                 String hashedUserPassword = BCrypt.hashpw("user123", BCrypt.gensalt());
                                 Usuario user = new Usuario(0, "user", hashedUserPassword, null);
                                 usuarioDAO.inserir(user);
+
+                                byte[] imagem = com.example.atividade3.Utils.ImageUtils.drawableToByteArray(context, R.drawable.grafo_facom);
+
+                                Evento evento = new Evento(0, "Chá na Facom", "FACOM - UFMS",
+                                        new java.util.Date(), "Evento tradicional da FACOM", 50, imagem);
+
+                                eventoDAO.inserir(evento);
                             }).start();
                         }
                     })
