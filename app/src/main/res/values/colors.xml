@@ -7,5 +7,6 @@
     <color name="botao_confirmar">#2ECC71</color>
     <color name="botao_cancelar">#E74C3C</color>
     <color name="botao_inativo">#E0E0E0</color>
+    <color name="cinza_desabilitado">#9D9D9D</color>
 
 </resources>
