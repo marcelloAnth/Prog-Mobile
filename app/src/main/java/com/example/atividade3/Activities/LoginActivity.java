@@ -1,26 +1,71 @@
 package com.example.atividade3.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.atividade3.R;
+import com.example.atividade3.Entities.Usuario;
+import com.example.atividade3.Security.SecurityUtils;
+import com.example.atividade3.databinding.ActivityLoginBinding;
+import com.example.atividade3.ui.UsuarioManager;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private ActivityLoginBinding binding;
+    private UsuarioManager usuarioManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        usuarioManager = new UsuarioManager(this);
+
+        fazerLogin();
+        esqueciSenha();
+        criarUsuario();
+    }
+
+    private void fazerLogin() {
+        binding.btnEntrar.setOnClickListener(v -> {
+            String login = binding.edtLogin.getText().toString().trim();
+            String senha = binding.edtSenha.getText().toString().trim();
+
+            if (login.isEmpty() || senha.isEmpty()) {
+                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            new Thread(() -> {
+                Usuario usuario = usuarioManager.usuarioDAO.buscarUsuarioPorLogin(login);
+                runOnUiThread(() -> {
+                    if (usuario != null && SecurityUtils.verifyPassword(senha, usuario.getHashedPassword())) {
+                        Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, EventosActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }).start();
+        });
+    }
+
+    private void criarUsuario() {
+        binding.btnCriarCadastro.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CadastroUsuarioActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    private void esqueciSenha() {
+        binding.btnEsqueciSenha.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TrocaSenhaActivity.class);
+            startActivity(intent);
         });
     }
 }

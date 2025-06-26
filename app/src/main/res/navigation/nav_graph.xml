@@ -15,10 +15,9 @@
             app:destination="@id/eventosActivity"/>
         <action
             android:id="@+id/action_login_to_cadastro_usuario"
-            app:destination="@id/cadastroUsuarioActivity"
-            />
+            app:destination="@id/cadastroUsuarioActivity"/>
         <action
-            android:id="+@id/action_login_to_troca_senha"
+            android:id="@+id/action_login_to_troca_senha"
             app:destination="@id/trocaSenhaActivity"/>
     </activity>
 
@@ -28,11 +27,10 @@
         android:label="activity_eventos"
         tools:layout="@layout/activity_eventos">
         <action
-            android:id="+@id/action_eventos_disponivies_to_tela_compra"
+            android:id="@+id/action_eventos_disponivies_to_tela_compra"
             app:destination="@id/telaCompraActivity"/>
-            />
         <action
-            android:id="+@id/action_eventos_disponivies_to_login"
+            android:id="@+id/action_eventos_disponivies_to_login"
             app:destination="@id/loginActivity"/>
     </activity>
 
@@ -41,20 +39,19 @@
         android:name="com.example.atividade3.Activities.CadastroUsuarioActivity"
         android:label="CadastroUsuarioActivity"
         tools:layout="@layout/activity_cadastro_usuario">
-    <action
-        android:id="+@id/action_cadastro_usuario_to_login"
-        app:destination="@id/loginActivity"/>
+        <action
+            android:id="@+id/action_cadastro_usuario_to_login"
+            app:destination="@id/loginActivity"/>
     </activity>
 
     <activity
         android:id="@+id/trocaSenhaActivity"
         android:name="com.example.atividade3.Activities.TrocaSenhaActivity"
         android:label="activity_troca_senha"
-        tools:layout="@layout/activity_troca_senha" >
+        tools:layout="@layout/activity_troca_senha">
         <action
-            android:id="+@id/action_troca_senha_to_login"
+            android:id="@+id/action_troca_senha_to_login"
             app:destination="@id/loginActivity"/>
-
     </activity>
 
     <activity
@@ -62,11 +59,9 @@
         android:name="com.example.atividade3.Activities.TelaCompraActivity"
         android:label="TelaCompraActivity"
         tools:layout="@layout/activity_tela_compra">
-    <action
-        android:id="+@id/tela_compra_to_eventos_disponiveis"
-        app:destination="@id/eventosActivity"/>
-        />
+        <action
+            android:id="@+id/tela_compra_to_eventos_disponiveis"
+            app:destination="@id/eventosActivity"/>
     </activity>
-
 
 </navigation>
