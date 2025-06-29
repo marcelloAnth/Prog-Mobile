@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_compra"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -7,34 +8,26 @@
     android:background="@android:drawable/dialog_holo_light_frame"
     android:layout_marginBottom="8dp">
     <TextView
-        android:id="@+id/txtNomeEvento"
+        android:id="@+id/txtNomeEventoCompra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nome do Evento"
         android:textStyle="bold"
         android:textSize="16sp"
-        android:maxLines="1"
-        android:ellipsize="end"/>
+        android:ellipsize="end"
+        android:maxLines="1"/>
     <TextView
-        android:id="@+id/txtLocalEvento"
+        android:id="@+id/txtDataCompra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Local do Evento"
+        android:text="Data da compra"
         android:textSize="14sp"
-        android:maxLines="1"
-        android:ellipsize="end"/>
+        android:layout_marginTop="4dp"/>
     <TextView
-        android:id="@+id/txtDataEvento"
+        android:id="@+id/txtQuantidadeCompra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data do Evento"
-        android:textSize="14sp"/>
-    <TextView
-        android:id="@+id/txtDescricaoEvento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Descrição do Evento"
-        android:textSize="13sp"
-        android:maxLines="2"
-        android:ellipsize="end"/>
+        android:text="Quantidade: 2"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"/>
 </LinearLayout>

@@ -35,5 +35,7 @@
         <item>10</item>
     </string-array>
     <string name="descricao_confirmado">Compra confirmada</string>
+    <string name="verificar_compras">Verificar compras</string>
+
 
 </resources>

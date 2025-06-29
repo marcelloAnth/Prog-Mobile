@@ -46,6 +46,9 @@ public class LoginActivity extends AppCompatActivity {
                     if (usuario != null && SecurityUtils.verifyPassword(senha, usuario.getHashedPassword())) {
                         Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(this, EventosActivity.class));
+                        Intent intent = new Intent(this, EventosActivity.class);
+                        intent.putExtra("USER_ID", usuario.getIdUsuario());
+                        startActivity(intent);
                         finish();
                     } else {
                         Toast.makeText(this, "Login ou senha inválidos", Toast.LENGTH_SHORT).show();

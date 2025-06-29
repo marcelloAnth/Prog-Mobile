@@ -12,13 +12,13 @@
         tools:layout="@layout/activity_login">
         <action
             android:id="@+id/action_login_to_eventos_disponiveis"
-            app:destination="@id/eventosActivity"/>
+            app:destination="@id/eventosActivity" />
         <action
             android:id="@+id/action_login_to_cadastro_usuario"
-            app:destination="@id/cadastroUsuarioActivity"/>
+            app:destination="@id/cadastroUsuarioActivity" />
         <action
             android:id="@+id/action_login_to_troca_senha"
-            app:destination="@id/trocaSenhaActivity"/>
+            app:destination="@id/trocaSenhaActivity" />
     </activity>
 
     <activity
@@ -27,11 +27,14 @@
         android:label="activity_eventos"
         tools:layout="@layout/activity_eventos">
         <action
-            android:id="@+id/action_eventos_disponivies_to_tela_compra"
-            app:destination="@id/telaCompraActivity"/>
+            android:id="@+id/action_eventos_to_tela_compra"
+            app:destination="@id/telaCompraActivity" />
         <action
-            android:id="@+id/action_eventos_disponivies_to_login"
-            app:destination="@id/loginActivity"/>
+            android:id="@+id/action_eventos_to_compras_realizadas"
+            app:destination="@id/comprasRealizadasActivity" />
+        <action
+            android:id="@+id/action_eventos_to_login"
+            app:destination="@id/loginActivity" />
     </activity>
 
     <activity
@@ -41,7 +44,7 @@
         tools:layout="@layout/activity_cadastro_usuario">
         <action
             android:id="@+id/action_cadastro_usuario_to_login"
-            app:destination="@id/loginActivity"/>
+            app:destination="@id/loginActivity" />
     </activity>
 
     <activity
@@ -51,7 +54,7 @@
         tools:layout="@layout/activity_troca_senha">
         <action
             android:id="@+id/action_troca_senha_to_login"
-            app:destination="@id/loginActivity"/>
+            app:destination="@id/loginActivity" />
     </activity>
 
     <activity
@@ -60,8 +63,31 @@
         android:label="TelaCompraActivity"
         tools:layout="@layout/activity_tela_compra">
         <action
-            android:id="@+id/tela_compra_to_eventos_disponiveis"
-            app:destination="@id/eventosActivity"/>
+            android:id="@+id/action_tela_compra_to_confirmacao_compra"
+            app:destination="@id/confirmacaoCompraActivity" />
+        <action
+            android:id="@+id/action_tela_compra_to_eventos"
+            app:destination="@id/eventosActivity" />
+    </activity>
+
+    <activity
+        android:id="@+id/confirmacaoCompraActivity"
+        android:name="com.example.atividade3.Activities.CompraConfirmadaActivity"
+        android:label="ConfirmacaoCompraActivity"
+        tools:layout="@layout/activity_compra_confirmada">
+        <action
+            android:id="@+id/action_confirmacao_to_eventos"
+            app:destination="@id/eventosActivity" />
+    </activity>
+
+    <activity
+        android:id="@+id/comprasRealizadasActivity"
+        android:name="com.example.atividade3.Activities.ComprasRealizadasActivity"
+        android:label="ComprasRealizadasActivity"
+        tools:layout="@layout/activity_compras_realizadas">
+        <action
+            android:id="@+id/action_compras_realizadas_to_eventos"
+            app:destination="@id/eventosActivity" />
     </activity>
 
 </navigation>

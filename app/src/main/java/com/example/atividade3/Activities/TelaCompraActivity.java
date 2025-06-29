@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.atividade3.Database.AppDatabase;
+import com.example.atividade3.Entities.Compra;
 import com.example.atividade3.Entities.Evento;
 import com.example.atividade3.databinding.ActivityTelaCompraBinding;
 
@@ -20,12 +21,20 @@ public class TelaCompraActivity extends AppCompatActivity {
 
     private ActivityTelaCompraBinding binding;
     private Evento evento;
+    private int userId;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityTelaCompraBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        userId = getIntent().getIntExtra("USER_ID", -1);
+        if(userId == -1) {
+            Toast.makeText(this, "Erro: usuário não identificado", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
 
         buscarEvento();
         ativarSpinner();
@@ -97,7 +106,9 @@ public class TelaCompraActivity extends AppCompatActivity {
             Executors.newSingleThreadExecutor().execute(() -> {
                 AppDatabase db = AppDatabase.getDatabase(TelaCompraActivity.this);
 
-                // Usa o método seguro de decremento
+                Compra novaCompra = new Compra(userId, evento.getIdEvento(), quantidade);
+                db.compraDAO().inserir(novaCompra);
+
                 int linhasAtualizadas = db.eventoDAO().decrementarIngressos(
                         evento.getIdEvento(),
                         quantidade
@@ -122,6 +133,7 @@ public class TelaCompraActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CompraConfirmadaActivity.class);
         intent.putExtra("evento_nome", nomeEvento);
         intent.putExtra("quantidade", quantidade);
+        intent.putExtra("USER_ID", userId);
         startActivity(intent);
         finish();
     }

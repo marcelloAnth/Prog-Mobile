@@ -22,6 +22,7 @@ public class EventosActivity extends AppCompatActivity {
 
     private ActivityEventosBinding binding;
     private Evento eventoSelecionado;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,23 @@ public class EventosActivity extends AppCompatActivity {
         binding = ActivityEventosBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        userId = getIntent().getIntExtra("USER_ID", -1);
+        if (userId == -1) {
+            Toast.makeText(this, "Erro: usuário não identificado", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
         preencherEventos();
-        comprarIngressos();
+        configurarComprarIngresso();
+        configurarVerificarCompras();
     }
 
     private void preencherEventos() {
         new Thread(() -> {
-            List<Evento> eventos = AppDatabase.getDatabase(this).eventoDAO().buscarEventosSemFoto();
+            List<Evento> eventos = AppDatabase.getDatabase(this)
+                    .eventoDAO()
+                    .buscarEventosSemFoto();
 
             runOnUiThread(() -> {
                 binding.lnlEventosDisponiveis.removeAllViews();
@@ -46,7 +57,8 @@ public class EventosActivity extends AppCompatActivity {
                 }
 
                 for (Evento evento : eventos) {
-                    View eventoView = getLayoutInflater().inflate(R.layout.item_evento, binding.lnlEventosDisponiveis, false);
+                    View eventoView = getLayoutInflater()
+                            .inflate(R.layout.item_evento, binding.lnlEventosDisponiveis, false);
 
                     TextView txtNomeEvento = eventoView.findViewById(R.id.txtNomeEvento);
                     TextView txtLocalEvento = eventoView.findViewById(R.id.txtLocalEvento);
@@ -55,22 +67,18 @@ public class EventosActivity extends AppCompatActivity {
 
                     txtNomeEvento.setText(evento.getNome());
                     txtLocalEvento.setText(evento.getLocal());
-                    String dataFormatada = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(evento.getData());
+                    String dataFormatada = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                            .format(evento.getData());
                     txtDataEvento.setText(dataFormatada);
                     txtDescricaoEvento.setText(evento.getDescricao());
-
 
                     eventoView.setOnClickListener(v -> {
                         eventoSelecionado = evento;
                         Toast.makeText(this, "Selecionado: " + evento.getNome(), Toast.LENGTH_SHORT).show();
-
-                        for (int i = 0; i < binding.lnlEventosDisponiveis.getChildCount(); i++) {
-                            binding.lnlEventosDisponiveis.getChildAt(i).setBackgroundResource(android.R.drawable.dialog_holo_light_frame);
-                        }
-                        eventoView.setBackgroundColor(ContextCompat.getColor(this, R.color.cinza_desabilitado));
-
+                        resetarSelecao();
+                        eventoView.setBackgroundColor(
+                                ContextCompat.getColor(this, R.color.cinza_desabilitado));
                     });
-
 
                     binding.lnlEventosDisponiveis.addView(eventoView);
                 }
@@ -78,16 +86,30 @@ public class EventosActivity extends AppCompatActivity {
         }).start();
     }
 
-    private void comprarIngressos() {
+    private void resetarSelecao() {
+        for (int i = 0; i < binding.lnlEventosDisponiveis.getChildCount(); i++) {
+            binding.lnlEventosDisponiveis.getChildAt(i)
+                    .setBackgroundResource(android.R.drawable.dialog_holo_light_frame);
+        }
+    }
+
+    private void configurarComprarIngresso() {
         binding.btnComprarIngresso.setOnClickListener(v -> {
             if (eventoSelecionado == null) {
                 Toast.makeText(this, "Selecione um evento antes de comprar", Toast.LENGTH_SHORT).show();
                 return;
             }
-
             Intent intent = new Intent(this, TelaCompraActivity.class);
             intent.putExtra("idEvento", eventoSelecionado.getIdEvento());
+            intent.putExtra("USER_ID", userId);
+            startActivity(intent);
+        });
+    }
 
+    private void configurarVerificarCompras() {
+        binding.btnVerificarCompras.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ComprasRealizadasActivity.class);
+            intent.putExtra("USER_ID", userId);
             startActivity(intent);
         });
     }

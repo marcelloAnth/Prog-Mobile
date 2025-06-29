@@ -35,9 +35,13 @@
         </activity>
 
         <activity
-            android:name=".Activities.CompraConfirmadaActivity"
-            android:label="Compra Confirmada"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:name=".Activities.CompraConfirmadaActivity" >
+
+        </activity>
+
+        <activity android:name=".Activities.ComprasRealizadasActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_cadastro_usuario"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".Activities.CadastroUsuarioActivity">
-
     <TextView
         android:id="@+id/txtTítulo"
         android:layout_width="wrap_content"
@@ -17,8 +16,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <TextView
         android:id="@+id/txtCadastro"
         android:layout_width="wrap_content"
@@ -28,10 +26,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </TextView>
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <TextView
         android:id="@+id/txtLogin"
         android:layout_width="36dp"
@@ -40,8 +35,7 @@
         android:layout_marginBottom="20dp"
         android:text="@string/label_login"
         app:layout_constraintBottom_toTopOf="@+id/edtLogin"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
         android:id="@+id/edtLogin"
         android:layout_width="wrap_content"
@@ -53,8 +47,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <TextView
         android:id="@+id/txtSenha"
         android:layout_width="wrap_content"
@@ -64,8 +57,7 @@
         app:layout_constraintBottom_toTopOf="@+id/edtSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <EditText
         android:id="@+id/edtSenha"
         android:layout_width="wrap_content"
@@ -77,8 +69,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtInsiraSenhaNovamente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <TextView
         android:id="@+id/txtInsiraSenhaNovamente"
         android:layout_width="wrap_content"
@@ -88,8 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/edtSenhaNovamente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <EditText
         android:id="@+id/edtSenhaNovamente"
         android:layout_width="wrap_content"
@@ -101,8 +91,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"/>
     <LinearLayout
         android:id="@+id/lnlBotoes"
         android:layout_width="375dp"
@@ -114,7 +103,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent">
-
         <Button
             android:id="@+id/btnEntrar"
             android:layout_width="150dp"
@@ -123,12 +111,7 @@
             android:layout_marginBottom="16dp"
             android:text="@string/criar_cadastro"
             app:backgroundTint="@color/botao_confirmar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintWidth_percent="0.45" />
-
+            app:layout_constraintWidth_percent="0.45"/>
         <Button
             android:id="@+id/btnCancelar"
             android:layout_width="150dp"
@@ -137,14 +120,8 @@
             android:layout_marginBottom="16dp"
             android:text="@string/cancelar"
             app:backgroundTint="@color/botao_cancelar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnEntrar"
-            app:layout_constraintWidth_percent="0.45" />
-
+            app:layout_constraintWidth_percent="0.45"/>
     </LinearLayout>
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="70dp"
@@ -153,7 +130,5 @@
         app:layout_constraintBottom_toTopOf="@+id/lnlBotoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-
+        tools:src="@tools:sample/avatars"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

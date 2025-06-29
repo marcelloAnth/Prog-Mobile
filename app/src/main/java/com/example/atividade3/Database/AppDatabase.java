@@ -9,19 +9,22 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.example.atividade3.DAO.CompraDAO;
 import com.example.atividade3.DAO.UsuarioDAO;
 import com.example.atividade3.DAO.EventoDAO;
+import com.example.atividade3.Entities.Compra;
 import com.example.atividade3.Entities.Usuario;
 import com.example.atividade3.Entities.Evento;
 import com.example.atividade3.R;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-@Database(entities = {Evento.class, Usuario.class}, version = 1)
+@Database(entities = {Evento.class, Usuario.class, Compra.class}, version = 1)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UsuarioDAO usuarioDAO();
     public abstract EventoDAO eventoDAO();
+    public abstract CompraDAO compraDAO();
     private static AppDatabase db;
 
     public static AppDatabase getDatabase(Context context) {
@@ -44,10 +47,8 @@ public abstract class AppDatabase extends RoomDatabase {
                                 Usuario user = new Usuario(0, "user", hashedUserPassword, null);
                                 usuarioDAO.inserir(user);
 
-                                byte[] imagem = com.example.atividade3.Utils.ImageUtils.drawableToByteArray(context, R.drawable.grafo_facom);
-
                                 Evento evento = new Evento(0, "Chá na Facom", "FACOM - UFMS",
-                                        new java.util.Date(), "Evento tradicional da FACOM", 50, imagem);
+                                        new java.util.Date(), "Evento tradicional da FACOM", 50, null);
 
                                 eventoDAO.inserir(evento);
                             }).start();

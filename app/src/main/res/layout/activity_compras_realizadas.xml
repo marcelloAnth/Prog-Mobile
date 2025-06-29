@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_compras_realizadas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".Activities.ComprasRealizadasActivity">
+    <TextView
+        android:id="@+id/txtTituloCompras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compras Realizadas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+    <LinearLayout
+        android:id="@+id/lnlComprasRealizadas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:layout_marginBottom="16dp"/>
+    <Button
+        android:id="@+id/btnVoltarEventos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar aos Eventos"
+        android:backgroundTint="@color/botoes"
+        android:textColor="@color/white"
+        android:layout_marginBottom="24dp"/>
+</LinearLayout>

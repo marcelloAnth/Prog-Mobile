@@ -19,8 +19,6 @@
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-
     <TextView
         android:id="@+id/txtLogin"
         android:layout_width="36dp"
@@ -43,7 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/btnBuscarCadastro"
         android:layout_width="193dp"
@@ -58,7 +55,6 @@
         app:layout_constraintStart_toStartOf="parent"
         >
     </Button>
-
     <TextView
         android:id="@+id/txtSenha"
         android:layout_width="wrap_content"
@@ -69,7 +65,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/edtSenha"
         android:layout_width="wrap_content"
@@ -82,7 +77,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/txtInsiraSenhaNovamente"
         android:layout_width="wrap_content"
@@ -93,7 +87,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/edtSenhaNovamente"
         android:layout_width="wrap_content"
@@ -106,7 +99,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent" />
-
     <LinearLayout
         android:id="@+id/lnlBotoes"
         android:layout_width="375dp"
@@ -117,7 +109,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
         <Button
             android:id="@+id/btnEntrar"
             android:layout_width="150dp"
@@ -131,8 +122,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintWidth_percent="0.45" />
-
-
         <Button
             android:id="@+id/btnCancelar"
             android:layout_width="150dp"
@@ -147,6 +136,4 @@
             app:layout_constraintStart_toEndOf="@+id/btnEntrar"
             app:layout_constraintWidth_percent="0.45" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
