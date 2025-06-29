@@ -10,7 +10,7 @@ public class ImageUtils {
     public static byte[] drawableToByteArray(Context context, int drawableId) {
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), drawableId);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 50, stream);
         return stream.toByteArray();
     }
 }

@@ -53,7 +53,6 @@ public class EventosActivity extends AppCompatActivity {
                     TextView txtDataEvento = eventoView.findViewById(R.id.txtDataEvento);
                     TextView txtDescricaoEvento = eventoView.findViewById(R.id.txtDescricaoEvento);
 
-                    // Preenche os textos
                     txtNomeEvento.setText(evento.getNome());
                     txtLocalEvento.setText(evento.getLocal());
                     String dataFormatada = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(evento.getData());

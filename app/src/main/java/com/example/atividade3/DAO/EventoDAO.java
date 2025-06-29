@@ -16,9 +16,17 @@ public interface EventoDAO {
     @Query("SELECT * FROM eventos WHERE idEvento = :id")
     Evento buscarEvento(int id);
 
+    @Query("SELECT foto FROM eventos WHERE idEvento = :id")
+    byte[] buscarFotoEvento(int id);
+
+    @Query("SELECT idEvento, nome, local, data, descricao, numIngressos FROM eventos WHERE idEvento = :id")
+    Evento buscarEventoSemFoto(int id);
 
     @Query("SELECT idEvento, nome, local, data, descricao, numIngressos FROM eventos")
     List<Evento> buscarEventosSemFoto();
+
+    @Query("UPDATE eventos SET numIngressos = numIngressos - :quantidade WHERE idEvento = :idEvento AND numIngressos >= :quantidade")
+    int decrementarIngressos(int idEvento, int quantidade);
 
 
 }
