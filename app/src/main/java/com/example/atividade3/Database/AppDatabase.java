@@ -15,7 +15,6 @@ import com.example.atividade3.DAO.EventoDAO;
 import com.example.atividade3.Entities.Compra;
 import com.example.atividade3.Entities.Usuario;
 import com.example.atividade3.Entities.Evento;
-import com.example.atividade3.R;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -40,14 +39,16 @@ public abstract class AppDatabase extends RoomDatabase {
                                 EventoDAO eventoDAO = getDatabase(context).eventoDAO();
 
                                 String hashedAdminPassword = BCrypt.hashpw("admin123", BCrypt.gensalt());
-                                Usuario admin = new Usuario(0, "admin", hashedAdminPassword, null);
+                                Usuario admin = new Usuario("admin", hashedAdminPassword, null);
+                                admin.setAdmin(true);
                                 usuarioDAO.inserir(admin);
 
                                 String hashedUserPassword = BCrypt.hashpw("user123", BCrypt.gensalt());
-                                Usuario user = new Usuario(0, "user", hashedUserPassword, null);
+                                Usuario user = new Usuario("user", hashedUserPassword, null);
+                                user.setAdmin(false);
                                 usuarioDAO.inserir(user);
 
-                                Evento evento = new Evento(0, "Chá na Facom", "FACOM - UFMS",
+                                Evento evento = new Evento("Chá na Facom", "FACOM - UFMS",
                                         new java.util.Date(), "Evento tradicional da FACOM", 50, null);
 
                                 eventoDAO.inserir(evento);

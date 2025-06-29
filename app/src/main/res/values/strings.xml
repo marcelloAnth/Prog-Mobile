@@ -36,6 +36,22 @@
     </string-array>
     <string name="descricao_confirmado">Compra confirmada</string>
     <string name="verificar_compras">Verificar compras</string>
+    <string name="bem_vindo_admin">Bem-vindo, Administrador</string>
+    <string name="gerenciar_eventos">Gerencie os eventos abaixo:</string>
+    <string name="adicionar_evento">Adicionar Evento</string>
+    <string name="excluir_evento">Excluir Evento</string>
+    <string name="titulo_cadastrar_evento">Cadastrar Evento</string>
+    <string name="descricao_imagem_evento">Imagem do evento</string>
+    <string name="hint_nome_evento">Nome do Evento</string>
+    <string name="hint_local_evento">Local do Evento</string>
+    <string name="hint_data_evento">Data (dd/MM/yyyy)</string>
+    <string name="hint_descricao_evento">Descrição do Evento</string>
+    <string name="botao_salvar_evento">Salvar</string>
+    <string name="botao_cancelar_evento">Cancelar</string>
+    <string name="hint_num_ingressos">Número de ingressos</string>
+
+
+
 
 
 </resources>

@@ -20,7 +20,7 @@ public class UsuarioManager {
         new Thread(() -> {
             try {
                 String senhaCriptografada = SecurityUtils.hashPassword(senha);
-                Usuario usuario = new Usuario(0, login, senhaCriptografada, foto);
+                Usuario usuario = new Usuario(login, senhaCriptografada, foto);
                 usuarioDAO.inserir(usuario);
             } catch (Exception e) {
                 e.printStackTrace();

@@ -1,6 +1,7 @@
 package com.example.atividade3.DAO;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -28,5 +29,6 @@ public interface EventoDAO {
     @Query("UPDATE eventos SET numIngressos = numIngressos - :quantidade WHERE idEvento = :idEvento AND numIngressos >= :quantidade")
     int decrementarIngressos(int idEvento, int quantidade);
 
-
+    @Delete
+    void excluir(Evento eventoSelecionado);
 }

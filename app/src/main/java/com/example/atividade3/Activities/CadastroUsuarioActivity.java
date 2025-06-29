@@ -105,7 +105,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                 }
 
                 String hashedPassword = BCrypt.hashpw(senha, BCrypt.gensalt());
-                Usuario novoUsuario = new Usuario(0, login, hashedPassword, fotoBytes);
+                Usuario novoUsuario = new Usuario(login, hashedPassword, fotoBytes);
                 novoUsuario.setAdmin(false);
 
                 AppDatabase.getDatabase(this).usuarioDAO().inserir(novoUsuario);

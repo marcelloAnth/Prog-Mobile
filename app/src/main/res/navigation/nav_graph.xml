@@ -90,4 +90,32 @@
             app:destination="@id/eventosActivity" />
     </activity>
 
+    <activity
+        android:id="@+id/cadastroEventoActivity"
+        android:name="com.example.atividade3.Activities.CadastroEventoActivity"
+        android:label="CadastroEventoActivity"
+        tools:layout="@layout/activity_cadastro_evento">
+
+        <action
+            android:id="@+id/action_cadastro_evento_to_eventos_admin"
+            app:destination="@id/eventosAdminActivity" />
+
+    </activity>
+
+    <activity
+        android:id="@+id/eventosAdminActivity"
+        android:name="com.example.atividade3.Activities.EventosAdminActivity"
+        android:label="EventosAdminActivity"
+        tools:layout="@layout/activity_eventos_admin">
+
+        <action
+            android:id="@+id/action_eventos_admin_to_cadastro_evento"
+            app:destination="@id/cadastroEventoActivity" />
+
+        <action
+            android:id="@+id/action_eventos_admin_to_login"
+            app:destination="@id/loginActivity" />
+    </activity>
+
+
 </navigation>

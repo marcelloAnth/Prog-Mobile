@@ -14,8 +14,7 @@ public class Usuario {
     private boolean admin;
     byte[] foto;
 
-    public Usuario(int idUsuario, String login, String hashedPassword, byte[] foto) {
-        this.idUsuario = idUsuario;
+    public Usuario(String login, String hashedPassword, byte[] foto) {
         this.login = login;
         this.hashedPassword = hashedPassword;
         this.admin = admin = false;

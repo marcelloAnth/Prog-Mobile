@@ -16,8 +16,7 @@ public class Evento {
     private int numIngressos;
     private byte[] foto;
 
-    public Evento(int idEvento, String nome, String local, Date data, String descricao, int numIngressos, byte[] foto) {
-        this.idEvento = idEvento;
+    public Evento(String nome, String local, Date data, String descricao, int numIngressos, byte[] foto) {
         this.nome = nome;
         this.local = local;
         this.data = data;

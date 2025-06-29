@@ -45,8 +45,14 @@ public class LoginActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     if (usuario != null && SecurityUtils.verifyPassword(senha, usuario.getHashedPassword())) {
                         Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(this, EventosActivity.class));
-                        Intent intent = new Intent(this, EventosActivity.class);
+
+                        Intent intent;
+                        if (usuario.isAdmin()) {
+                            intent = new Intent(this, EventosAdminActivity.class); // Tela Admin
+                        } else {
+                            intent = new Intent(this, EventosActivity.class); // Tela padrão
+                        }
+
                         intent.putExtra("USER_ID", usuario.getIdUsuario());
                         startActivity(intent);
                         finish();
@@ -57,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
             }).start();
         });
     }
+
 
     private void criarUsuario() {
         binding.btnCriarCadastro.setOnClickListener(v -> {
